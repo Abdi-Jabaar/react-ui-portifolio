@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Urbanist:ital,wght@0,100..900;1,100..900&display=swap');
+@import "tailwindcss";
+
+
+@tailwind utilities;
+
+@theme{
+    --font-display: "Roboto", sans-serif;
+    --breakpoint-3xl: 1920px;
+    --color-primary: #9328E7;
+}
+
+@layer base {
+    html {
+        font-family: var(--font-display);
+    }
+
+    body {
+        background-color: #0B0F12;
+        overflow-x: hidden;
+        color: #ffff;
+    }
+}
+
+.sec-bg-color{
+    background-color: #1F2933;
+}
+
+.third-color{
+    color: #00FFE0;    
+}
+
+
+
+.hexagon-border {
+  position: relative;
+  width: 8rem;   /* same as h-32 */
+  height: 8rem;
+  background-color: transparent;
+  clip-path: polygon(
+    25% 0%, 75% 0%, 
+    100% 50%, 
+    75% 100%, 25% 100%, 
+    0% 50%
+  );
+}
+
+.hexagon-border::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  background: none;
+  border: 2px solid #00ffe0;
+  clip-path: inherit;
+  z-index: -1;
+  border-radius: 2px;
+}
+
+
+.hover-3d:hover {
+    transform: perspective(600px) rotateX('10deg') rotateY('10deg');
+}
